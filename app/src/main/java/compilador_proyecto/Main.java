@@ -24,9 +24,9 @@ public class Main {
             int indicadorLinea = 1;
 
             //Para cada linea en el readline diferente de nada (verifica que haya algo)
-            while ((linea = lectorArchivo.readLine()) != null) { // salta los espacios vacios al inicio o final de la linea
-                linea = linea.trim(); //salta os espacios vacios en medio de la linea
-                if (linea.isEmpty()) continue; //verifica si esta vacio o no
+            while ((linea = lectorArchivo.readLine()) != null) { // primeramente verifica que si haya algo verificado que sea diferente a nulo
+                linea = linea.trim(); // quita los esaciocios iniciales y finales ue no aportan en nada
+                if (linea.isEmpty()) continue; // quita los espacios en medio de los tokens
 
                 //Cabezera impresa en el archivo S
                 escritorArchivo.write("Tokens para la línea: " + linea + "\n");
