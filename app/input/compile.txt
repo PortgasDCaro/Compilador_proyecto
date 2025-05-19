@@ -1,0 +1,15 @@
+SET x 10
+SET z -7
+ADD x 5
+PRINT x
+SET 10 x
+SET x y
+SET 3a 5
+SET 7z 5
+ADD y 2
+ADD x 2b
+ADD
+PRINT
+PRINT y
+MULT x 2
+XYZ 1 2

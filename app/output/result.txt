@@ -1,0 +1,92 @@
+Tokens para la línea: SET x 10
+LexToken(SET,SET,1,0)
+LexToken(ID,x,1,3)
+LexToken(NUM,10,1,4)
+Resultado del análisis:
+OK
+
+Tokens para la línea: SET z -7
+LexToken(SET,SET,2,0)
+LexToken(ID,z,2,3)
+LexToken(NUM,-7,2,4)
+Resultado del análisis:
+OK
+
+Tokens para la línea: ADD x 5
+LexToken(ADD,ADD,3,0)
+LexToken(ID,x,3,3)
+LexToken(NUM,5,3,4)
+Resultado del análisis:
+OK
+
+Tokens para la línea: PRINT x
+LexToken(PRINT,PRINT,4,0)
+LexToken(ID,x,4,5)
+Resultado del análisis:
+15
+
+Tokens para la línea: SET 10 x
+LexToken(SET,SET,5,0)
+LexToken(NUM,10,5,3)
+LexToken(ID,x,5,5)
+Error: Error sintáctico: parámetros intercambiados, se esperaba <ID> <NUM> y se encontró <NUM> <ID>
+
+Tokens para la línea: SET x y
+LexToken(SET,SET,6,0)
+LexToken(ID,x,6,3)
+LexToken(ID,y,6,4)
+Error: Error léxico: valor no numérico 'y'
+
+Tokens para la línea: SET 3a 5
+LexToken(SET,SET,7,0)
+LexToken(DESCONOCIDO,3a,7,3)
+Error léxico: token inválido '3a' en la columna 3
+
+Error: Error léxico: identificador inválido '3a'
+
+Tokens para la línea: SET 7z 5
+LexToken(SET,SET,8,0)
+LexToken(DESCONOCIDO,7z,8,3)
+Error léxico: token inválido '7z' en la columna 3
+
+Error: Error léxico: identificador inválido '7z'
+
+Tokens para la línea: ADD y 2
+LexToken(ADD,ADD,9,0)
+LexToken(ID,y,9,3)
+LexToken(NUM,2,9,4)
+Error: Error semántico: variable no definida: 'y'
+
+Tokens para la línea: ADD x 2b
+LexToken(ADD,ADD,10,0)
+LexToken(ID,x,10,3)
+LexToken(DESCONOCIDO,2b,10,4)
+Error léxico: token inválido '2b' en la columna 4
+
+Error: Error léxico: valor no numérico 'x'
+
+Tokens para la línea: ADD
+LexToken(ADD,ADD,11,0)
+Error: Error sintáctico: instrucción incompleta
+
+Tokens para la línea: PRINT
+LexToken(PRINT,PRINT,12,0)
+Error: Error sintáctico: instrucción incompleta
+
+Tokens para la línea: PRINT y
+LexToken(PRINT,PRINT,13,0)
+LexToken(ID,y,13,5)
+Error: Error sémantico: variable no definida: 'y'
+
+Tokens para la línea: MULT x 2
+LexToken(ID,MULT,14,0)
+LexToken(ID,x,14,4)
+LexToken(NUM,2,14,5)
+Error: Error léxico: comando no reconocido: MULT
+
+Tokens para la línea: XYZ 1 2
+LexToken(ID,XYZ,15,0)
+LexToken(NUM,1,15,3)
+LexToken(NUM,2,15,4)
+Error: Error léxico: comando no reconocido: XYZ
+
