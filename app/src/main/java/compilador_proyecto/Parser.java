@@ -3,21 +3,22 @@ package compilador_proyecto;
 import java.util.*;
 
 public class Parser {
-    public static String parse(List<String> listaTokens, Map<String, Integer> memory) throws Exception {
-        if (listaTokens.size() < 2)
-            throw new Exception("Error sintáctico: instrucción incompleta");
+    public static String parse(List<String> listaTokens, Map<String, Integer> memory) throws Exception { // crea un mapa string con memoria para la lista de tokens
+        if (listaTokens.size() < 2) // valida que el tamano de los tokens sea <2
+            throw new Exception("Error sintáctico: instrucción incompleta"); // en cualquier caso diferente a este se lanza un error
 
-        String comando = listaTokens.get(0).toUpperCase();
+        //da la intruccion de el primer token y devuielve la posicion 0 de la lista de tokens
+        String comando = listaTokens.get(0).toUpperCase(); // primero toma la lista de tokens en 0 y de nuevo pone todo en mayuscula automaticamente
 
         switch (comando) {
-            case "SET":
+            case "SET": // se hace la validacion de que la lista de tonkens no sea diferente a 3
                 if (listaTokens.size() != 3)
-                    throw new Exception("Error sintáctico: SET requiere 2 argumentos");
+                    throw new Exception("Error sintáctico: SET requiere 2 argumentos"); // si no lanza un error
 
-                String varSet = listaTokens.get(1);
+                String varSet = listaTokens.get(1); // toma la posicion 1 y 2 de la lista de tokens asignandolo a las variables
                 String valorSet = listaTokens.get(2);
 
-                if (!esIdentificadorValido(varSet)) {
+                if (!esIdentificadorValido(varSet)) { // en caso de que NO sea un identificador valido lanza un error
                     // 1a) y valorSet sí es ID, es intercambio de parámetros → sintáctico
                     if (esIdentificadorValido(valorSet)) {
                         throw new Exception(
