@@ -1,0 +1,15 @@
+El proyecto COMPILATOR es un compilador básico desarrollado como ejercicio académico, cuyo propósito es interpretar una pequeña
+serie de comandos definidos por el usuario en un archivo .txt. Este compilador realiza un análisis léxico y sintáctico del contenido, 
+verificando que la estructura de las instrucciones siga las reglas definidas. La idea principal es familiarizarse con los componentes 
+fundamentales de un compilador: el tokenizador (Tokenizer), el parser (Parser) y el manejador principal (Main). 
+
+
+  Instrucciones:
+
+  Descargar el Archivo del compilador en un computador 
+  Abrir una terminal Terminal(ubuntu) o Git bash (Windows) y clonar el repositorio Git.
+  Entrar a la carpeta del proyecto 
+  Abrir un editor de lenguaje tipo VSCode o Gedit
+  Compilar el proyecto (en este caso el lenguaje es JAVA)
+  
+  
